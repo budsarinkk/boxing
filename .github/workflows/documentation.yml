@@ -1,0 +1,36 @@
+name: Documentation
+
+on:
+  push:
+    paths:
+      - 'docs/**'
+      - '**.md'
+    branches: [ main ]
+  pull_request:
+    paths:
+      - 'docs/**'
+      - '**.md'
+    branches: [ main ]
+
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Markdown links check
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
+      with:
+        use-verbose-mode: 'yes'
+        config-file: '.github/workflows/mlc_config.json'
+
+  markdown-lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Markdown Lint
+      uses: avto-dev/markdown-lint@v1
+      with:
+        config: '.github/workflows/markdownlint.json'
+        args: '**/*.md'

@@ -1,0 +1,26 @@
+# These owners will be the default owners for everything in the repo.
+* @budsarinkk
+
+# Frontend code owners
+/frontend_modules/ @budsarinkk
+/src/ @budsarinkk
+
+# Backend code owners
+/server/ @budsarinkk
+
+# Documentation owners
+/docs/ @budsarinkk
+
+# Test owners
+/tests/ @budsarinkk
+
+# GitHub specific files
+/.github/ @budsarinkk
+
+# Configuration files
+*.json @budsarinkk
+*.yml @budsarinkk
+*.yaml @budsarinkk
+
+# Security sensitive files
+/security/ @budsarinkk
